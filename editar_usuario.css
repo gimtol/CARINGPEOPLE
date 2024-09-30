@@ -1,0 +1,81 @@
+/* General styles for body */
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('donar.gif'); /* Cambia 'edit-user-background.jpg' por la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+/* Main container for user editing */
+form {
+    background-color: rgba(255, 255, 255, 0); /* Fondo blanco con transparencia */
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+    width: 350px;
+    text-align: center;
+}
+
+/* Form headings */
+h2, h3 {
+    color: #2E7D32;
+    margin-bottom: 15px;
+}
+
+/* Labels */
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* Input fields */
+input[type="text"], input[type="email"], input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    box-sizing: border-box;
+}
+
+/* Submit and delete buttons */
+input[type="submit"], button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+/* Submit button styling */
+input[type="submit"] {
+    background-color: #2E7D32;
+    color: white;
+}
+
+input[type="submit"]:hover {
+    background-color: #388E3C;
+}
+
+/* Delete account button */
+button {
+    background-color: #D32F2F;
+    margin-top: 20px;
+    color: white;
+}
+
+button:hover {
+    background-color: #C62828;
+}

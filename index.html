@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CaringPeople - Tu Generosidad Construye</title>
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <header>
+        <!-- Agregar logo de la empresa -->
+        <img src="logo.png" alt="Logo CaringPeople" class="logo">
+        <h1>CaringPeople</h1>
+        <p>Tu Generosidad Construye</p>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="mision.html">Misión</a></li>
+                <li><a href="vision.html">Visión</a></li>
+                <li><a href="objetivos.html">Objetivos</a></li>
+                <li><a href="donaciones.html">Donar</a></li>
+                <li><a href="registrar.html">Registro</a></li>
+                <li><a href="login.html">Iniciar Sesión</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <h2>Bienvenido a CaringPeople</h2>
+            <p>CaringPeople es una organización sin ánimo de lucro comprometida con la protección, rescate y bienestar de los animales...</p>
+            <a href="donaciones.html" class="button">Donar Ahora</a>
+        </section>
+
+        <!-- Sección de Fundaciones -->
+        <section>
+            <h2>Fundaciones a las que Puedes Donar</h2>
+            <p>Selecciona una fundación y apoya una causa que importa.</p>
+
+            <!-- Lista de fundaciones con botones para donar -->
+            <div class="foundation-list">
+                <div class="foundation-card">
+                    <h3>Fundación Esperanza</h3>
+                    <button onclick="redirectToDonation('esperanza')">Donar a Fundación Esperanza</button>
+                </div>
+
+                <div class="foundation-card">
+                    <h3>Animales Felices</h3>
+                    <button onclick="redirectToDonation('felices')">Donar a Animales Felices</button>
+                </div>
+
+                <div class="foundation-card">
+                    <h3>Ayuda Animal</h3>
+                    <button onclick="redirectToDonation('ayuda')">Donar a Ayuda Animal</button>
+                </div>
+
+                <div class="foundation-card">
+                    <h3>Salvemos Juntos</h3>
+                    <button onclick="redirectToDonation('salvemos')">Donar a Salvemos Juntos</button>
+                </div>
+
+                <div class="foundation-card">
+                    <h3>Patitas Amorosas</h3>
+                    <button onclick="redirectToDonation('patitas')">Donar a Patitas Amorosas</button>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Sección de comentarios -->
+        <section>
+            <h2>Deja tu Comentario</h2>
+            <form id="comment-form">
+                <label for="name">Nombre:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="comment">Comentario:</label>
+                <textarea id="comment" name="comment" rows="4" required></textarea>
+                
+                <button type="submit">Enviar Comentario</button>
+            </form>
+            <div id="comments-section">
+                <h3>Comentarios Recibidos:</h3>
+                <ul id="comments-list">
+                    <!-- Los comentarios se agregarán aquí -->
+                </ul>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 CaringPeople. Todos los derechos reservados.</p>
+    </footer>
+
+    <!-- Agregar enlaces a redes sociales y correo electrónico -->
+    <div class="social-media">
+        <h3>Síguenos en nuestras redes sociales</h3>
+        <a href="https://www.instagram.com/CaringPeopleDonations" target="_blank">
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+        </a>
+        <a href="https://www.facebook.com/CaringPeople" target="_blank">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+        </a>
+        <a href="mailto:caringpeopledonation@gmail.com">
+            <i class="fa fa-envelope" aria-hidden="true"></i>
+        </a>
+        <a href="https://wa.me/573137767070" target="_blank">
+            <i class="fa fa-whatsapp" aria-hidden="true"></i>
+        </a>
+    </div>
+
+    <!-- Enlace a Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        .social-media {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .social-media a {
+            margin: 0 15px;
+            font-size: 32px; /* Aumentar el tamaño de los íconos */
+            color: white; /* Color de los íconos a blanco */
+            text-decoration: none; /* Sin subrayado */
+        }
+        .social-media a:hover {
+            color: #4CAF50; /* Cambia el color al pasar el mouse */
+        }
+        .foundation-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        .foundation-card {
+            width: 250px;
+            text-align: center;
+            margin: 15px;
+            padding: 15px;
+            border: 1px solid #ccc;
+            border-radius: 8px;
+            background-color: white;
+        }
+        .foundation-card h3 {
+            font-size: 1.2em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .foundation-card button {
+            width: 80%;
+            padding: 10px;
+            font-size: 14px;
+            color: white;
+            background-color: #4CAF50;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .foundation-card button:hover {
+            background-color: #45a049;
+        }
+    </style>
+
+    <script>
+        // Manejar el envío del formulario de comentarios
+        document.getElementById('comment-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita que el formulario se envíe de forma tradicional
+
+            const name = document.getElementById('name').value;
+            const comment = document.getElementById('comment').value;
+
+            // Crear un nuevo elemento de lista para el comentario
+            const newComment = document.createElement('li');
+            newComment.textContent = `${name}: ${comment}`;
+
+            // Agregar el nuevo comentario a la lista de comentarios
+            document.getElementById('comments-list').appendChild(newComment);
+
+            // Limpiar el formulario
+            document.getElementById('comment-form').reset();
+        });
+
+        // Función para redirigir a la página de donaciones correspondiente
+        function redirectToDonation(foundation) {
+            window.location.href = `donaciones.html`;  // Redirigir a la página de donación específica
+        }
+    </script>
+</body>
+</html>

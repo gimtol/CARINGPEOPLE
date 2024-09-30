@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .login-container {
+            background-color: white;
+            padding: 40px; /* Espacio interno del contenedor */
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            width: 350px; /* Ancho del contenedor */
+            text-align: center; /* Centrar el texto */
+        }
+
+        h2 {
+            margin-bottom: 20px; /* Espacio debajo del título */
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px; /* Espacio interno */
+            margin: 10px 0; /* Espacio entre campos */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 16px; /* Tamaño de fuente */
+        }
+
+        input[type="submit"],
+        .back-button {
+            width: 100%;
+            padding: 12px; /* Espacio interno */
+            font-size: 16px;
+            color: white;
+            background-color: #4CAF50; /* Color del botón */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 10px; /* Espacio encima del botón */
+        }
+
+        input[type="submit"]:hover,
+        .back-button:hover {
+            background-color: #45a049; /* Color al pasar el ratón sobre el botón */
+        }
+
+        a {
+            display: inline-block; /* Alineación en línea y centrado */
+            margin-top: 10px; /* Espacio encima del enlace */
+            text-decoration: none; /* Sin subrayado */
+            color: #4CAF50; /* Color del enlace */
+            font-weight: bold; /* Negrita */
+        }
+
+        a:hover {
+            text-decoration: underline; /* Subrayar al pasar el ratón */
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <form action="login.php" method="POST">
+            <h2>Iniciar Sesión</h2>
+            <input type="text" placeholder="&#128273; Usuario" name="usuario" required>
+            <input type="password" placeholder="&#128274; Contraseña" name="pass" required>
+            <input type="submit" value="Ingresar" name="btningresar">
+            <a href="registrar.html">Crear una cuenta</a>
+            <input type="button" class="back-button" value="Regresar a la Página Principal" onclick="window.location.href='index.html'">
+        </form>
+    </div>
+</body>
+</html>
